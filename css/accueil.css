@@ -1,0 +1,25 @@
+
+
+article{
+min-height: 100vh;
+display: grid;
+grid-template-rows: auto 1fr auto;
+} 
+
+
+ .section1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 15px 0;
+  /*
+  background-color: #7a4848;*/
+  color: white; 
+ }
+
+ #btnInscription{
+   background-color: yellowgreen;
+ }
+
+ 

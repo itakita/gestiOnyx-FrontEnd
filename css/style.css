@@ -1,0 +1,26 @@
+:root {
+    --red: #7a4848;
+    --grey: #7b7b7b;
+    --white: white;
+  }
+
+  .myFooter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 0;
+    background-color: var(--grey);
+    color: var(--white) ;
+    /**/
+  } 
+
+  .mainFlex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #7a4848;
+    color: white; 
+  }
