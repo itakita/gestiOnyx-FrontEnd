@@ -12,7 +12,8 @@ grid-template-rows: auto 1fr auto;
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
-  padding: 15px 0;
+  flex:auto;
+  padding: 15px 15px 15px 15px;
   /*
   background-color: #7a4848;*/
   color: white; 
