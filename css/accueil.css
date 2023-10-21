@@ -1,26 +1,54 @@
+.common-home{
+  background: #E6F8FF;
+}
 
+ul {
+  list-style-type: none;
+}
 
-article{
-min-height: 100vh;
-display: grid;
-grid-template-rows: auto 1fr auto;
-} 
+#page{
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 55px auto 46px auto;
+}
 
+#page header {
+  padding: 0 0 33px;
+}
 
- .section1{
+#bienvenuAcceuil{
+  padding:0 100px 0 ;
+}
+#container{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
-  flex:auto;
-  padding: 15px 15px 15px 15px;
-  /*
-  background-color: #7a4848;*/
-  color: white; 
- }
+  padding: 15px;
+  background: white;
+  color: black; 
+  min-height: 100vh;
 
- #btnInscription{
-   background-color: yellowgreen;
- }
+} 
+
+#jeux-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 jeux par rangée */
+  max-width: 1020px; /* Limite la largeur du conteneur de jeux */
+  align-items: end;
+}
+
+
+.jeu {
+  margin-right: 100px;
+  margin-bottom: 20px; /* Espacement entre les jeux */
+}
+
+
+
+.myfooter{
+  background: #f8f9fa;
+}
+
 
  
