@@ -1,76 +1,90 @@
-function changerArrierePlan(){
-    document.getElementsByClassName("mainFlex")[0].style.backgroundColor = "blue"
-}
-
-function changerImage(){
-    document.getElementsByClassName("mainFlex")[0].style.backgroundImage = "url('https://images.unsplash.com/photo-1573152958734-1922c188fba3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80')";
-    document.getElementById("nomEcole").style.backgroundColor = "blue";
-}
-
-function afficherAccord(){
-    let accord = $("#noteEntree").val();
-    
-    switch(accord){
-        case "a":
-            $("#accordAffiche").attr("src", "images/a.png")
-            break;
-        case "b":
-            $("#accordAffiche").attr("src", "images/b.png")
-            break;
-        case "c":
-            $("#accordAffiche").attr("src", "images/c.png")
-            break;
-        case "d":
-            $("#accordAffiche").attr("src", "images/d.png")
-            break;
-        case "e":
-            $("#accordAffiche").attr("src", "images/e.png")
-            break;
-         case "f":
-            $("#accordAffiche").attr("src", "images/f.png")
-            break;
-        case "g":
-            $("#accordAffiche").attr("src", "images/g.png")
-            break;
-        default:
-            alert("out of range");
-    }
-    //alert(accord);
-}
-
-
-function validerReponse(){
-    if($("#choix").val() != 6)
+const jeux = [
     {
-        alert("Mauvaise réponse");
-        alert("Entrez une réponse, f/");
+        id: "1",
+      nom: "Mario",
+      type: "images/mario.jpg",
+      prix: "$19.99",
+      dateDeSortie: "Mario",
+      description: "images/mario.jpg",
+      image: "$19.99",
+
+    },
+    {
+        id: "2",
+      nom: "Mario",
+      type: "images/mario.jpg",
+      prix: "$19.99",
+      dateDeSortie: "Mario",
+      description: "images/mario.jpg",
+      image: "$19.99",
+    },
+    {
+        id: "3",
+      nom: "Mario",
+      type: "images/mario.jpg",
+      prix: "$19.99",
+      dateDeSortie: "Mario",
+      description: "images/mario.jpg",
+      image: "$19.99",
+      },
+      {
+        id: "4",
+      nom: "Mario",
+      type: "images/mario.jpg",
+      prix: "$19.99",
+      dateDeSortie: "Mario",
+      description: "images/mario.jpg",
+      image: "$19.99",
+      },
+      {
+        id: "5",
+      nom: "Mario",
+      type: "images/mario.jpg",
+      prix: "$19.99",
+      dateDeSortie: "Mario",
+      description: "images/mario.jpg",
+      image: "$19.99",
+      },
+      {
+        id: "6",
+      nom: "Mario",
+      type: "images/mario.jpg",
+      prix: "$19.99",
+      dateDeSortie: "Mario",
+      description: "images/mario.jpg",
+      image: "$19.99",
+      }
+    ];
+
+
+    function remplirTableauInventaire(){
+        const tableau = document.getElementById('tableau-inventaire');
+        const entete = document.getElementById('tableau-inventaire-entete-entete');
+    
+        jeux.forEach(function(jeu){
+            const tdIdDeProduit= document.createElement('td');
+            const tdNom = document.createElement('td');
+            const tdType= document.createElement('td');
+            const tdPrix = document.createElement('td');
+            const tdDateDeSortie= document.createElement('td');
+            const tdDescription = document.createElement('td');
+            const tdUrlImage = document.createElement('td');
+            const tr = document.createElement('tr');
+            tr.append(tdIdDeProduit, tdNom,tdType,tdPrix,tdDateDeSortie,tdDescription,tdUrlImage);
+    
+            tdIdDeProduit.innerText = jeu.id;
+            tdNom.innerText = jeu.nom;
+            tdType.innerText = jeu.type;
+            tdPrix.innerText = jeu.prix;
+            tdDateDeSortie.innerText = jeu.dateDeSortie;
+            tdDescription.innerText = jeu.description;
+            tdUrlImage.innerHTML = jeu.image;
+    
+            tableau.append(tr);
+            tableau.style.color = "black";
+        });
     }
-    else
-        alert("Bonne réponse");
-}
-const maDate = new Date();
 
-let day = maDate.getDate();
-let month = maDate.getMonth() + 1;
-let year = maDate.getFullYear();
-
-let currentDate = `${day}-${month}-${year}`;
-//console.log(currentDate); // "17-6-2022"
-$(document).ready(
-    alert(`Bienvenu(e) en ce :${currentDate }`),
-    $("#bienvenu").mouseover(
-        changerImage
-    ), 
-
-    $("#noteEntree").keypress(function(e){
-        if(e.which == 13){
-            alert("Enter detected")
-            afficherAccord()
-        }
-    }),
-    $("#valider").click(function(){
-        validerReponse();
-        // let a = $("#choix").val()
-        // alert("Clicked" + a)
-    }),
-);
+    document.addEventListener("DOMContentLoaded", function () {
+        remplirTableauInventaire();
+      });
