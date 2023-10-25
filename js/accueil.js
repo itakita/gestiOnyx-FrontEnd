@@ -63,7 +63,7 @@ const jeux = [
 
   function afficherJeux() {
     const container = document.getElementById("jeux-container");
-
+    //const jeux = chargerJeuxBd(); //await?
     jeux.forEach((jeu) => {
       const jeuElement = document.createElement("div");
       jeuElement.classList.add("jeu");
@@ -86,3 +86,95 @@ const jeux = [
   document.addEventListener("DOMContentLoaded", function () {
     afficherJeux();
   });
+
+  
+async function chargerJeuxBd()
+{
+  try{
+    
+    const res = await fetch("http://api/jeux");
+    const jeux = await res.json();
+    if(!res.ok){ //ou 
+      //console.log("Problem");
+      console.log(jeux.description);
+      return;
+    }
+    //Action
+    return jeux;
+  }catch(error){
+    error.log(error);
+  }
+
+}
+
+async function ajouterJeuBD()
+{
+  try{
+    const res = await fetch("http://api/jeux", {
+      method : "POST",
+      headers: {
+        "Content-Type" : 'application/json'
+      },
+      body: JSON.stringify(nouveauJeu) //l'objet contenant le nouveau jeu
+    });
+    const reponse = await res.json();
+
+    if(!res.ok){ //ou 
+      //console.log("Problem");
+      console.log(res.description);
+      return;
+    }
+    //Action
+    //return jeux;
+    console.log(reponse);
+  }catch(error){
+    error.log(error);
+  }
+}
+
+async function modifierJeuBD()
+{
+  try{
+    const res = await fetch("http://api/jeux/{id_jeu}", {
+      method : "PUT",
+      headers: {
+        "Content-Type" : 'application/json'
+      },
+      body: JSON.stringify(nouveauJeu) //l'objet contenant le nouveau jeu
+    });
+    const reponse = await res.json();
+
+    if(!res.ok){ //ou 
+      //console.log("Problem");
+      console.log(res.description);
+      return;
+    }
+    //Action
+    //return jeux;
+    console.log(reponse);
+  }catch(error){
+    error.log(error);
+  }
+}
+
+async function deleteJeu()
+{
+  try{
+    const res = await fetch("http://api/jeux/{id_jeu}", {
+      method : "DELETE"
+    });
+    const reponse = await res.json();
+
+    if(!res.ok){ //ou 
+      //console.log("Problem");
+      console.log(res.description);
+      return;
+    }
+    //Action
+    //return jeux;
+    console.log(reponse);
+  }catch(error){
+    error.log(error);
+  }
+}
+  
