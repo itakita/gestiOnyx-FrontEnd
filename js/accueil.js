@@ -63,7 +63,7 @@ const jeux = [
 
   function afficherJeux() {
     const container = document.getElementById("jeux-container");
-  
+
     jeux.forEach((jeu) => {
       const jeuElement = document.createElement("div");
       jeuElement.classList.add("jeu");
