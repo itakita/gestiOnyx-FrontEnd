@@ -1,5 +1,5 @@
 .common-home{
-  background: #E6F8FF;
+  background: rgb(147, 139, 139);
 }
 
 ul {
@@ -25,7 +25,7 @@ ul {
   justify-content: space-evenly;
   width: 100%;
   padding: 15px;
-  background: white;
+  background: rgb(147, 139, 139);
   color: black; 
   min-height: 100vh;
 
@@ -51,4 +51,30 @@ ul {
 }
 
 
+.nom{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
  
+
+.prix{
+  color: green;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.btn.btn-success{
+  border-style:solid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  size: 10px;
+}
+
+background{
+  color: black;
+}
+
+
+
