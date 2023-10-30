@@ -69,8 +69,9 @@ const jeux = [
             const tdDateDeSortie= document.createElement('td');
             const tdDescription = document.createElement('td');
             const tdUrlImage = document.createElement('td');
+            const tdActions = document.createElement('td');
             const tr = document.createElement('tr');
-            tr.append(tdIdDeProduit, tdNom,tdType,tdPrix,tdDateDeSortie,tdDescription,tdUrlImage);
+            tr.append(tdIdDeProduit, tdNom,tdType,tdPrix,tdDateDeSortie,tdDescription,tdUrlImage, tdActions);
     
             tdIdDeProduit.innerText = jeu.id;
             tdNom.innerText = jeu.nom;
@@ -79,7 +80,8 @@ const jeux = [
             tdDateDeSortie.innerText = jeu.dateDeSortie;
             tdDescription.innerText = jeu.description;
             tdUrlImage.innerHTML = jeu.image;
-    
+            tdActions.innerHTML = `<button class="btn btn-large btn-success">Modifier</button>
+                                    <button class="btn btn-large btn-success">Supprimer</button>`
             tableau.append(tr);
             tableau.style.color = "black";
         });
